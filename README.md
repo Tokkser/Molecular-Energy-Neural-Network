@@ -258,12 +258,11 @@ molecular-energy-prediction/
 ├── artifacts/
 │   ├── train_data_pca1400.joblib
 │   └── coloumb_pca_pipeline1400.joblib
-│
-├── figures/
-│   └── model_evaluation_plots.png
+|   └── mlp1024_512_256_128_64_64_28_64_16
+
 │
 └── report/
-    └── final_report.pdf
+    └── molecular energy report.pdf
 ```
 
 
