@@ -244,7 +244,6 @@ An observed timing test showed that a 50,000 molecule MLP run required approxima
 
 ## 8. Repository Structure
 
-A recommended repository structure is shown below:
 
 ```text
 molecular-energy-prediction/
@@ -252,12 +251,7 @@ molecular-energy-prediction/
 ├── README.md
 ├── requirements.txt
 ├── Molecular_Energy_Prediction.ipynb
-│
-├── Dataset/
-│   ├── pubChem_p_00000001_00025000.json
-│   ├── pubChem_p_00025001_00050000.json
-│   └── ...
-│
+|
 ├── models/
 │   └── mlp1024_512_256_128_64_64_28_64_16.joblib
 │
@@ -272,7 +266,6 @@ molecular-energy-prediction/
     └── final_report.pdf
 ```
 
-Large dataset files and model artifacts may be excluded from GitHub if they exceed file size limits. In that case, provide download instructions instead.
 
 ---
 
