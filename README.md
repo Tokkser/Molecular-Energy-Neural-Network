@@ -319,17 +319,6 @@ scikit-learn
 joblib
 ```
 
-A basic `requirements.txt` file can be:
-
-```text
-numpy
-pandas
-matplotlib
-seaborn
-scikit-learn
-joblib
-```
-
 ---
 
 ## 11. How to Run
