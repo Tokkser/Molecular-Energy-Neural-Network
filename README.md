@@ -250,7 +250,7 @@ molecular-energy-prediction/
 │
 ├── README.md
 ├── requirements.txt
-├── Molecular_Energy_Prediction.ipynb
+├── Molecular energy code.ipynb
 |
 ├── models/
 │   └── mlp1024_512_256_128_64_64_28_64_16.joblib
@@ -273,7 +273,7 @@ molecular-energy-prediction/
 Clone the repository:
 
 ```bash
-git clone https://github.com/tokkser/molecular-energy-prediction.git
+git clone https://github.com/Tokkser/Molecular-Energy-Neural-Network.git
 cd molecular-energy-prediction
 ```
 
