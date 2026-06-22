@@ -512,9 +512,13 @@ Possible future improvements include:
 
 ---
 
-## 18. Author
+## 18. Author and Contributors
 
 **Abdullah Imran**
+
+**Contributors**
+Waleed Rehman
+Hasnain Ahmed
 
 ---
 
