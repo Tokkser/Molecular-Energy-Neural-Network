@@ -244,27 +244,20 @@ An observed timing test showed that a 50,000 molecule MLP run required approxima
 
 ## 8. Repository Structure
 
+The repository currently contains the following main files:
 
 ```text
-molecular-energy-prediction/
+Molecular-Energy-Neural-Network/
 │
 ├── README.md
 ├── requirements.txt
-├── Molecular energy code.ipynb
-|
-├── models/
-│   └── mlp1024_512_256_128_64_64_28_64_16.joblib
-│
-├── artifacts/
-│   ├── train_data_pca1400.joblib
-│   └── coloumb_pca_pipeline1400.joblib
-|   └── mlp1024_512_256_128_64_64_28_64_16
-
-│
-└── report/
-    └── molecular energy report.pdf
+├── LICENSE
+├── Artifacts
+├── Molecular Energy code.ipynb
+└── Molecular energy report.pdf
 ```
 
+The dataset JSON files and large generated model artifacts are not uploaded directly to GitHub because they are too large for normal repository storage. Artifact download information is provided in the `Artifacts` file.
 
 ---
 
@@ -274,7 +267,7 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/Tokkser/Molecular-Energy-Neural-Network.git
-cd molecular-energy-prediction
+cd Molecular-Energy-Neural-Network
 ```
 
 Create a virtual environment:
@@ -316,6 +309,9 @@ matplotlib
 seaborn
 scikit-learn
 joblib
+jupyter
+notebook
+ipykernel
 ```
 
 ---
@@ -328,9 +324,48 @@ Download the dataset from Kaggle:
 
 [Predict Molecular Properties Dataset](https://www.kaggle.com/datasets/burakhmmtgl/predict-molecular-properties/data)
 
-Place the JSON files inside the `Dataset/` folder.
+Place the JSON files inside a local folder named:
 
-### 11.2 Generate Coulomb Matrix and PCA Features
+```text
+Dataset/
+```
+
+The notebook expects the following dataset files:
+
+```text
+Dataset/
+├── pubChem_p_00000001_00025000.json
+├── pubChem_p_00025001_00050000.json
+├── pubChem_p_00050001_00075000.json
+├── pubChem_p_00075001_00100000.json
+├── pubChem_p_00100001_00125000.json
+├── pubChem_p_00125001_00150000.json
+├── pubChem_p_00150001_00175000.json
+├── pubChem_p_00175001_00200000.json
+├── pubChem_p_00200001_00225000.json
+└── pubChem_p_00225001_00250000.json
+```
+
+### 11.2 Define Dataset Paths
+
+Before running the preprocessing section, define `dataset_paths` using the local dataset files:
+
+```python
+dataset_paths = [
+    r"Dataset/pubChem_p_00000001_00025000.json",
+    r"Dataset/pubChem_p_00025001_00050000.json",
+    r"Dataset/pubChem_p_00050001_00075000.json",
+    r"Dataset/pubChem_p_00075001_00100000.json",
+    r"Dataset/pubChem_p_00100001_00125000.json",
+    r"Dataset/pubChem_p_00125001_00150000.json",
+    r"Dataset/pubChem_p_00150001_00175000.json",
+    r"Dataset/pubChem_p_00175001_00200000.json",
+    r"Dataset/pubChem_p_00200001_00225000.json",
+    r"Dataset/pubChem_p_00225001_00250000.json",
+]
+```
+
+### 11.3 Generate Coulomb Matrix and PCA Features
 
 Run the preprocessing section of the notebook:
 
@@ -346,7 +381,7 @@ train_data_pca1400.joblib
 coloumb_pca_pipeline1400.joblib
 ```
 
-### 11.3 Train the Final Model
+### 11.4 Train the Final Model
 
 Run the final model training cell:
 
@@ -360,7 +395,7 @@ mlp=MLPRegressor(
 mlp.fit(x_train,y_train)
 ```
 
-### 11.4 Evaluate the Model
+### 11.5 Evaluate the Model
 
 The notebook reports:
 
@@ -491,4 +526,4 @@ The dataset used in this project was obtained from Kaggle and is based on molecu
 
 ## 20. License
 
-This repository is intended for educational and research purposes. Check the original Kaggle dataset page for dataset-specific usage conditions.
+This project is licensed under the terms described in the [LICENSE](LICENSE) file.
